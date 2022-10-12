@@ -1,14 +1,45 @@
-text = input('Enter a sentence: ')
+# word frequency analyzer
+# counts the frequency of each word in some text
+import re
 
-wdict = {}
-words = text.split()
+def word_frequency(text):
+    frequencies = {}
+    words = text.split()
+    for word in words:
+        if word in frequencies:
+            frequencies[word] += 1
+        else:
+            frequencies[word] = 1
+    return frequencies
 
-for word in words:
-    if word in wdict:
-        wdict[word] += 1
+def report_frequency(text):
+    frequencies = word_frequency(text)
+    for key in frequencies:
+        print(key, frequencies[key])
+
+# Bonus: Normalization
+def normalized_word_frequency(text):
+    frequencies = {}
+    # Example: split on a regex word boundary to strip punctuation
+    # word_boundary = r'\W'
+    # words = re.split(word_boundary, text)
+    words = text.split()
+    for word in words:
+        word = word.lower()
+        word = re.sub('\W', '', word)
+        if word in frequencies:
+            frequencies[word] += 1
+        else:
+            frequencies[word] = 1
+    return frequencies
+
+# Run the report_frequency function when running the file
+if __name__ == "__main__":
+    import sys
+    if len(sys.argv) == 2:
+        file = sys.argv[1]
+        with open(file) as f:
+            report_frequency(f.read())
     else:
-        wdict[word] = 1
-        
-# printing the dictionary
-for key in wdict:
-    print(key, wdict[key])
+        print("Usage: python main.py [file]")
+

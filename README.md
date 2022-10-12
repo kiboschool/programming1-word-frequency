@@ -13,7 +13,7 @@ text as the value.
 
 2. Write a function `report_frequency` that takes in a string of text and calls
 `word_frequency` to get the frequency of all the words in the text. It should
-then print the top ten most used words and their frequencies.
+print each word and its frequency.
 
 ## Starter Code
 
@@ -33,6 +33,10 @@ if you split words by spaces, you may have words that include punctuation.
 
 Write a new function `normalized_word_frequency` that fixes these errors. It
 should lowercase each term and strip out any punctuation.
+
+There are multiple ways to remove punctuation, which you can use google to find.
+
+Several possible solutions use functions from python's regular expressions (the `re` module) for splitting the text into words (`re.split`) or substituting the punctuation characters (`re.sub`).
 
 ## Bonus: TF-IDF
 
