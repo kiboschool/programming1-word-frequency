@@ -23,7 +23,12 @@ on a file if one is passed in like `python main.py file-to-check.txt`.
 
 ## Testing
 
-Run the automated tests with `python test_main.py` to check your solution.
+Run the program to test it. You can pass in a file like README.md or poem.txt if
+you want a real sample.
+
+Run the automated tests with `python test_main.py` to check your solution. The
+tests only check your word_frequencies function, and do not test your reporting
+function or the bonus challenges.
 
 ## Bonus: Normalization
 
