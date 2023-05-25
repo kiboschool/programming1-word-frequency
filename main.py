@@ -4,7 +4,7 @@ import re
 
 def word_frequency(text):
     frequencies = {}
-    words = text.split()
+    words = text.replace('.', '').split()
     for word in words:
         if word in frequencies:
             frequencies[word] += 1
